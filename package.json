@@ -1,0 +1,38 @@
+{
+  "name": "gulp-junit-merge",
+  "version": "0.0.0",
+  "description": "JUnit report merger for gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morishiri/gulp-junit-merge.git"
+  },
+  "keywords": [
+    "gulp",
+    "junit",
+    "merge",
+    "gulp-junit-merger",
+    "test",
+    "unit",
+    "test",
+    "unit"
+  ],
+  "author": "Łukasz Sowa <morishiriz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Morishiri/gulp-junit-merge/issues"
+  },
+  "homepage": "https://github.com/Morishiri/gulp-junit-merge#readme",
+  "dependencies": {
+    "junit-report-merger": "0.0.5",
+    "through2": "^2.0.3",
+    "vinyl": "^2.1.0"
+  },
+  "devDependencies": {
+    "standard-version": "^4.2.0"
+  }
+}
