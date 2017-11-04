@@ -12,4 +12,5 @@ gulp.task('merge', () => {
     return gulp.src('./reports/**/junit.xml')
         .pipe(merger())
         .pipe(gulp.dest('./reports/merged'));
+});
 ```
