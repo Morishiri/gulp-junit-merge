@@ -15,6 +15,8 @@ module.exports = function () {
 
         if (file.isStream()) {
             this.emit('error', new gutil.PluginError('gulp-junit-merge', 'Streams not supported!'));
+            callback();
+            return;
         }
 
         reportStrings.push(file.contents.toString());

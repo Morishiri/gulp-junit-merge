@@ -8,6 +8,8 @@
 
 ## Usage example
 
+### Default usage
+
 ```
 const gulp = require('gulp');
 const merger = require('gulp-junit-merge');
