@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint lib/**/*.js test/**/*.js",
     "test": "mocha test/**/*.spec.js",
-    "coverage": "nyc --reporter=text npm test",
+    "coverage": "nyc report --reporter=text",
+    "coverage-coveralls": "nyc report --reporter=text-lcov | coveralls",
     "release": "standard-version"
   },
   "repository": {
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
     "eslint": "^4.10.0",
     "gulp": "^3.9.1",
     "mocha": "^4.0.1",
