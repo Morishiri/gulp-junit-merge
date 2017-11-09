@@ -2,7 +2,7 @@ const fs = require('fs');
 const gulp = require('gulp');
 const assert = require('chai').assert;
 const streamAssert = require('stream-assert');
-const File = require('vinyl');
+const File = require('gulp-util').File;
 const junitMerge = require('../index');
 
 const expectedMergedResult = fs.readFileSync(`${__dirname}/fixtures/result.xml`);
@@ -35,6 +35,22 @@ describe('gulp-junit-merge', () => {
             gulp.src([`${__dirname}/fixtures/input1.xml`, `${__dirname}/fixtures/input2.xml`])
                 .pipe(junitMerge())
                 .pipe(streamAssert.length(1))
+                .pipe(streamAssert.end(done));
+        });
+
+        it('should return file named \'junit.xml\' by default', (done) => {
+            gulp.src([`${__dirname}/fixtures/input1.xml`, `${__dirname}/fixtures/input2.xml`])
+                .pipe(junitMerge())
+                .pipe(streamAssert.first((d) => {assert.equal(d.path, 'junit.xml');}))
+                .pipe(streamAssert.end(done));
+        });
+
+        it('should return file named \'junit-global.xml\' if filename option is specified as \'junit-global.xml\'', (done) => {
+            gulp.src([`${__dirname}/fixtures/input1.xml`, `${__dirname}/fixtures/input2.xml`])
+                .pipe(junitMerge({
+                    filename: 'junit-global.xml'
+                }))
+                .pipe(streamAssert.first((d) => {assert.equal(d.path, 'junit-global.xml');}))
                 .pipe(streamAssert.end(done));
         });
 

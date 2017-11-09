@@ -20,3 +20,22 @@ gulp.task('merge', () => {
         .pipe(gulp.dest('./reports/merged'));
 });
 ```
+
+### With options
+
+```
+const gulp = require('gulp');
+const merger = require('gulp-junit-merge');
+
+gulp.task('merge', () => {
+    return gulp.src('./reports/**/junit.xml')
+        .pipe(merger({
+            filename: 'junit-global.xml'
+        }))
+        .pipe(gulp.dest('./reports/merged'));
+});
+```
+
+#### Available options
+
+- `filename` - emmited file will have the name provided
