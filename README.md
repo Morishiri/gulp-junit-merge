@@ -1,6 +1,8 @@
 # gulp-junit-merge
+[![Build Status](https://travis-ci.org/Morishiri/gulp-junit-merge.svg?branch=master)](https://travis-ci.org/Morishiri/gulp-junit-merge)
+[![Coverage Status](https://coveralls.io/repos/github/Morishiri/gulp-junit-merge/badge.svg?branch=master)](https://coveralls.io/github/Morishiri/gulp-junit-merge?branch=master)
 
-Simple gulp plugin using [junit-report-merger](https://github.com/bhovhannes/junit-report-merger) underneath.
+*Simple gulp plugin using [junit-report-merger](https://github.com/bhovhannes/junit-report-merger) underneath.*
 
 ## Usage example
 

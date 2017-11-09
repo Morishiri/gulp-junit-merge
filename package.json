@@ -4,7 +4,9 @@
   "description": "JUnit report merger for gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint lib/**/*.js test/**/*.js",
+    "test": "mocha test/**/*.spec.js",
+    "coverage": "nyc --reporter=text npm test",
     "release": "standard-version"
   },
   "repository": {
@@ -28,11 +30,18 @@
   },
   "homepage": "https://github.com/Morishiri/gulp-junit-merge#readme",
   "dependencies": {
+    "gulp-util": "^3.0.8",
     "junit-report-merger": "0.0.5",
     "through2": "^2.0.3",
     "vinyl": "^2.1.0"
   },
   "devDependencies": {
-    "standard-version": "^4.2.0"
+    "chai": "^4.1.2",
+    "eslint": "^4.10.0",
+    "gulp": "^3.9.1",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "standard-version": "^4.2.0",
+    "stream-assert": "^2.0.3"
   }
 }
