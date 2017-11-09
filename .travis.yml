@@ -5,7 +5,9 @@ os:
   - osx
 
 before_script: npm run lint
-after_success: npm run coverage-coveralls
+after_success:
+  - npm run coverage
+  - npm run coveralls
 
 node_js:
   - "6"
