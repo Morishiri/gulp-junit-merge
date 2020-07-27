@@ -9,10 +9,9 @@ environment:
 
 # Install scripts. (runs after repo cloning)
 install:
-  # Get the latest stable version of Node 0.STABLE.latest
+  # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
-  # Typical npm stuff.
-  - npm -g install npm@latest
+  # install modules
   - npm install
 
 # Post-install test scripts.
@@ -20,12 +19,10 @@ test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
-  - cmd: npm test
+  # run tests
+  - npm test
 
-os:
-  - Default Azure
-
-# Don't actually build using MSBuild
+# Don't actually build.
 build: off
 
 # Set build version format here instead of in the admin panel.
@@ -33,3 +30,5 @@ version: "{build}"
 
 matrix:
   fast_finish: true
+  
+
